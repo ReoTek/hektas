@@ -3,10 +3,16 @@
 
     <ContentQuery :path="$route.path" v-slot="{ data }">
       <!-- <ContentRenderer :value="data" /> -->
-      <h2 class="text-4xl font-extrabold dark:text-white pb-4">{{ data[0]["title"] }}</h2>
-      <ListenButton/>
+      <h2 class="text-4xl font-extrabold dark:text-white pb-4">{{ data[1]["title"] }}</h2>
+      <ListenButton :recordId="data[1].id" lang="tr"/>
+      <p class="dark:text-white">{{ data[1]["description"] }}</p>
+
+      <h4 class="text-2xl dark:text-white pt-4">English</h4>
+      <ListenButton :recordId="data[0].id" lang="en"/>
+      <p class="dark:text-white">{{ data[0]["description"] }}</p>
     </ContentQuery>
-    <ContentDoc :path="$route.path"/>
+    
+    
   </main>
 </template>
   

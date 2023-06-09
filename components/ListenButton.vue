@@ -1,6 +1,18 @@
 <template>
-    <a href="" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 mb-2 px-4 rounded-full flex items-center">
-        <!-- {{ $t('listen_record') }} -->
-        Dinleyin
-    </a>
+    <audio controls class="my-2">
+        <source :src="get_record_url" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
 </template>
+
+<script>
+// A vue prop for the record id
+export default {
+    props: ['recordId', 'lang'],
+    computed: {
+        get_record_url() {
+            return "/public/voice_records/" + this.lang + "/" + this.recordId + ".wav"
+        }
+    }
+}
+</script>

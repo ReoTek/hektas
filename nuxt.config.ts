@@ -49,5 +49,8 @@ export default defineNuxtConfig({
   },
   devtools: {
     enabled: true
-  }
+  },
+  publicRuntimeConfig: {
+    baseURL: process.env.BASE_URL || 'http://localhost:3000'
+  },
 })
