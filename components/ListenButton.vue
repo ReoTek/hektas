@@ -11,7 +11,7 @@ export default {
     props: ['recordId', 'lang'],
     computed: {
         get_record_url() {
-            return "/public/voice_records/" + this.lang + "/" + this.recordId + ".wav"
+            return "/voice_records/" + this.lang + "/" + this.recordId + ".wav"
         }
     }
 }
